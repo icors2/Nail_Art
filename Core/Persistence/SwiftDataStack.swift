@@ -4,9 +4,13 @@ import SwiftData
 enum SwiftDataStack {
     static func makeContainer(inMemory: Bool = false) -> ModelContainer {
         let schema = Schema([
-            ClientSet.self,
-            Palette.self,
-            DraftSnapshot.self
+            Client.self,
+            NailDesignSet.self,
+            SavedColor.self,
+            StickerAsset.self,
+            Tag.self,
+            FolderCollection.self,
+            DesignSnapshot.self
         ])
 
         let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)

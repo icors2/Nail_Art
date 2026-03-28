@@ -7,8 +7,10 @@ struct NailCanvasApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CanvasScreen(viewModel: CanvasViewModel())
-                .environment(AutosaveManager(modelContext: modelContainer.mainContext))
+            RootSplitView()
+                .task {
+                    SampleDataSeeder.seedIfNeeded(context: modelContainer.mainContext)
+                }
         }
         .modelContainer(modelContainer)
     }
